@@ -81,6 +81,11 @@ jobs:
                     cache: 'pip'
                     cache-dependency-path: .github/workflows/requirements-conan-package.txt
 
+            -   name: Add brew to PATH
+                if:  ${{ runner.os == 'Macos' }}
+                run:
+                    echo "/opt/homebrew/bin:$PATH" >> $GITHUB_ENV
+
             -   name: Install Python macOS
                 if:  ${{ runner.os == 'Macos' }}
                 run: brew install python@3.10
