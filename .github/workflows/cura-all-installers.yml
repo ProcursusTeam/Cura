@@ -110,3 +110,17 @@ jobs:
             staging: ${{ inputs.staging }}
             installer: ${{ inputs.installer }}
         secrets: inherit
+        
+    macos-aarch64-installer-create:
+        if: ${{ inputs.build_macos }}
+        uses: ./.github/workflows/cura-installer.yml
+        with:
+            platform: 'self-hosted'
+            os_name: 'mac'
+            cura_conan_version: ${{ inputs.cura_conan_version }}
+            conan_args: ${{ inputs.conan_args }}
+            conan_config: ${{ inputs.conan_config }}
+            enterprise: ${{ inputs.enterprise }}
+            staging: ${{ inputs.staging }}
+            installer: ${{ inputs.installer }}
+        secrets: inherit
