@@ -84,7 +84,7 @@ jobs:
             -   name: Add brew to PATH
                 if:  ${{ runner.os == 'Macos' }}
                 run:
-                    echo "/opt/homebrew/bin:$PATH" >> $GITHUB_ENV
+                    echo "/opt/homebrew/bin" >> $GITHUB_PATH
 
             -   name: Install Python macOS
                 if:  ${{ runner.os == 'Macos' }}
