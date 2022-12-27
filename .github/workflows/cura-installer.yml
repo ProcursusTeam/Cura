@@ -157,7 +157,7 @@ jobs:
 
             -   name: Configure Macos keychain (Bash)
                 id: macos-keychain
-                if: ${{ runner.os == 'Macos' }}
+                if: ${{ runner.os == 'MacosN' }}
                 uses: apple-actions/import-codesign-certs@v1
                 with:
                     p12-file-base64: ${{ secrets.MACOS_CERT_P12 }}
@@ -196,7 +196,7 @@ jobs:
                     .\cura_inst\Scripts\activate_github_actions_version_env.ps1
 
             -   name: Unlock Macos keychain (Bash)
-                if: ${{ runner.os == 'Macos' }}
+                if: ${{ runner.os == 'MacosN' }}
                 run: security unlock -p $TEMP_KEYCHAIN_PASSWORD signing_temp.keychain
                 env:
                     TEMP_KEYCHAIN_PASSWORD: ${{  steps.macos-keychain.outputs.keychain-password }}
