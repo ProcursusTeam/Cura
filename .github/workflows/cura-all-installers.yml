@@ -122,5 +122,5 @@ jobs:
             conan_config: ${{ inputs.conan_config }}
             enterprise: ${{ inputs.enterprise }}
             staging: ${{ inputs.staging }}
-            installer: ${{ inputs.installer }}
+            installer: false
         secrets: inherit
